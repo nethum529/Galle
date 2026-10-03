@@ -1,10 +1,16 @@
 import type { Metadata } from "next"
-import { JetBrains_Mono } from "next/font/google"
+import { Instrument_Serif, JetBrains_Mono } from "next/font/google"
 
 import { Shell } from "@/components/shell"
 import { docs } from "@/lib/docs"
 
 import "./globals.css"
+
+const serif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: "400",
+})
 
 const mono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -18,8 +24,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${mono.variable} h-full`}>
-      <body className="h-full overflow-hidden bg-black bg-[linear-gradient(rgb(0_0_0/0.7),rgb(0_0_0/0.7)),url(/backdrop.jpg)] bg-cover bg-fixed bg-center font-sans text-[13px] text-white/95 antialiased">
+    <html lang="en" className={`${serif.variable} ${mono.variable} h-full`}>
+      <body className="h-full overflow-hidden bg-black bg-[linear-gradient(rgb(0_0_0/0.7),rgb(0_0_0/0.7)),url(/backdrop.jpg)] bg-cover bg-fixed bg-center font-serif text-[13px] text-white/95 antialiased">
         <Shell components={docs.map((d) => ({ label: d.name, href: `/docs/${d.slug}` }))}>{children}</Shell>
       </body>
     </html>
