@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-serif: var(--font-instrument-serif), Georgia, serif;
+  --font-serif: "Sentient", Georgia, serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 }
 
