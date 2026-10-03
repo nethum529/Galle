@@ -63,10 +63,8 @@ function NavBar({ brand, items, current, onSelect, className, ...props }: NavBar
   const rootRef = React.useRef<HTMLElement>(null)
   const rowRef = React.useRef<HTMLDivElement>(null)
   const pillRef = React.useRef<HTMLSpanElement>(null)
-  const hoverRef = React.useRef<HTMLSpanElement>(null)
   const buttonRef = React.useRef<HTMLButtonElement>(null)
   const pillBox = React.useRef<Box | null>(null)
-  const hoverBox = React.useRef<Box | null>(null)
   const [open, setOpen] = React.useState(false)
   const menuId = React.useId()
 
@@ -103,25 +101,6 @@ function NavBar({ brand, items, current, onSelect, className, ...props }: NavBar
     return () => observer.disconnect()
   }, [current])
 
-  // A faint second pill follows the pointer. It hides over the current link.
-  const showHover = (link: HTMLAnchorElement) => {
-    const row = rowRef.current
-    const hover = hoverRef.current
-    const to = row && measure(row, link)
-    if (!hover || !to) return
-    const from = hoverBox.current
-    hoverBox.current = to
-    const slide = from && !reducedMotion() ? `${edgeTransition(from, to, 200, 280)}, ` : ""
-    placePill(hover, to, `${slide}opacity 150ms linear`)
-    hover.style.opacity = link.getAttribute("aria-current") === "page" ? "0" : "1"
-  }
-
-  const hideHover = () => {
-    if (!hoverRef.current) return
-    hoverRef.current.style.opacity = "0"
-    hoverBox.current = null
-  }
-
   React.useEffect(() => {
     if (!open) return
     const onPointerDown = (e: PointerEvent) => {
@@ -156,22 +135,16 @@ function NavBar({ brand, items, current, onSelect, className, ...props }: NavBar
 
           <div
             ref={rowRef}
-            onPointerLeave={hideHover}
             onKeyDown={(e) => moveFocus(e, "ArrowLeft", "ArrowRight")}
             className="relative flex @max-[32rem]:hidden"
           >
-            <span ref={hoverRef} aria-hidden className="absolute inset-y-0 rounded-[2px] bg-white/[.04] opacity-0" />
             <span ref={pillRef} aria-hidden className="absolute inset-y-0 rounded-[2px] bg-white/8 opacity-0" />
             {items.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 aria-current={item.href === current ? "page" : undefined}
-                onPointerEnter={(e) => e.pointerType === "mouse" && showHover(e.currentTarget)}
-                onClick={(e) => {
-                  hideHover()
-                  onSelect?.(item.href, e)
-                }}
+                onClick={(e) => onSelect?.(item.href, e)}
                 className={cn(
                   "group relative rounded-[2px] px-3.5 text-[13px] leading-9 text-white/60 transition-colors duration-100 hover:text-white/95",
                   "aria-[current=page]:text-white/95 aria-[current=page]:delay-200 aria-[current=page]:duration-200",

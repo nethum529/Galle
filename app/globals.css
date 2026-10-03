@@ -9,9 +9,12 @@ html {
   color-scheme: dark;
 }
 
-* {
-  scrollbar-width: thin;
-  scrollbar-color: rgb(255 255 255 / 0.15) transparent;
+/* In a layer, so utilities such as [scrollbar-width:none] can override it. */
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(255 255 255 / 0.15) transparent;
+  }
 }
 
 ::selection {
