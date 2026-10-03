@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${mono.variable} h-full`}>
-      <body className="h-full overflow-hidden bg-black bg-[linear-gradient(rgb(0_0_0/0.5),rgb(0_0_0/0.5)),url(/backdrop.jpg)] bg-cover bg-fixed bg-center font-mono text-[13px] text-white/95 antialiased">
+      <body className="h-full overflow-hidden bg-black bg-[linear-gradient(rgb(0_0_0/0.7),rgb(0_0_0/0.7)),url(/backdrop.jpg)] bg-cover bg-fixed bg-center font-sans text-[13px] text-white/95 antialiased">
         <Shell components={docs.map((d) => ({ label: d.name, href: `/docs/${d.slug}` }))}>{children}</Shell>
       </body>
     </html>

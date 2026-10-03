@@ -15,7 +15,7 @@ export function CodeBlock({ code, className }: { code: string; className?: strin
 
   return (
     <div className={cn("flex items-start rounded-[4px] bg-black/25 shadow-[inset_0_0_0_1px_rgb(255_255_255/0.07)]", className)}>
-      <pre className="h-full min-w-0 flex-1 overflow-auto py-4 pl-4 text-[12.5px] leading-relaxed text-white/80">
+      <pre className="h-full min-w-0 flex-1 overflow-auto py-4 pl-4 font-mono text-[12.5px] leading-relaxed text-white/80">
         <code>{code}</code>
       </pre>
       <button
