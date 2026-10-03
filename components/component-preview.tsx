@@ -44,7 +44,7 @@ export function ComponentPreview({ demo, code }: { demo: React.ReactNode; code: 
         <div
           hidden={tab !== "Preview"}
           className={cn(
-            "h-full items-center justify-center rounded-[4px] p-6 shadow-[inset_0_0_0_1px_rgb(255_255_255/0.07)]",
+            "h-full items-center justify-center rounded-[4px] p-6 shadow-[inset_0_0_0_1px_rgb(255_255_255/0.16)]",
             tab === "Preview" && "flex"
           )}
         >

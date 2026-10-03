@@ -23,7 +23,7 @@ export default function NavBarDemo() {
         e.preventDefault()
         setCurrent(href)
       }}
-      className="w-full max-w-[680px] self-start"
+      className="w-full max-w-[680px]"
     />
   )
 }
