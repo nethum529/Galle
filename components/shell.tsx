@@ -27,7 +27,7 @@ export function Shell({ components, children }: { components: Page[]; children: 
     )
 
   return (
-    <Surface className="flex h-full flex-col overflow-hidden md:flex-row">
+    <Surface className="flex h-full flex-col overflow-hidden rounded-none shadow-none md:flex-row">
       <aside className="hidden w-56 shrink-0 flex-col overflow-y-auto border-r border-white/[.07] pb-5 md:flex">
         <Link href="/" className="px-5 py-5 text-sm">
           glass
