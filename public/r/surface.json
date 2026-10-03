@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "surface",
+  "title": "Surface",
+  "description": "A flat glass panel. It takes all its color from the backdrop.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/glass/ui/surface.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\n// Fine grain noise so the glass does not look like flat plastic.\nconst noise = `url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")`\n\nfunction Surface({ className, children, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"surface\"\n      className={cn(\n        \"relative isolate rounded-[6px] bg-black/35 text-white/95 shadow-[inset_0_0_0_1px_rgb(255_255_255/0.07)]\",\n        \"backdrop-blur-[6px] backdrop-saturate-[1.17] backdrop-contrast-[.89]\",\n        \"[@media(prefers-reduced-transparency:reduce)]:bg-neutral-950/95\",\n        className\n      )}\n      {...props}\n    >\n      <span\n        aria-hidden\n        className=\"pointer-events-none absolute inset-0 -z-10 rounded-[inherit] opacity-[.035] mix-blend-overlay\"\n        style={{ backgroundImage: noise }}\n      />\n      {children}\n    </div>\n  )\n}\n\nexport { Surface }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}
