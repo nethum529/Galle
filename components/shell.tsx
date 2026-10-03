@@ -22,20 +22,20 @@ export function Shell({ components, children }: { components: Page[]; children: 
 
   const linkClass = (href: string) =>
     cn(
-      "mx-2.5 rounded-[4px] px-2.5 leading-8 text-white/60 transition-colors duration-100 hover:text-white/95",
+      "mx-3 rounded-[4px] px-[18px] text-sm leading-8 text-white/70 transition-colors duration-100 hover:text-white/95",
       pathname === href && "bg-white/8 text-white/95"
     )
 
   return (
     <Surface className="flex h-full flex-col overflow-hidden rounded-none shadow-none md:flex-row">
-      <aside className="hidden w-56 shrink-0 flex-col overflow-y-auto border-r border-white/[.07] pb-5 md:flex">
-        <Link href="/" className="px-5 py-5 text-sm">
+      <aside className="hidden w-64 shrink-0 flex-col overflow-y-auto border-r border-white/[.07] pb-5 md:flex">
+        <Link href="/" className="px-[30px] pt-6 pb-5 text-sm">
           Galle
         </Link>
         <Link href="/" className={linkClass("/")}>
           Introduction
         </Link>
-        <div className="h-5" />
+        <div className="h-6" />
         {components.map((page) => (
           <Link key={page.href} href={page.href} className={linkClass(page.href)}>
             {page.label}
