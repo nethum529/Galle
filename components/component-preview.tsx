@@ -2,7 +2,6 @@
 
 import * as React from "react"
 
-import { BackdropWindow } from "@/components/backdrop-window"
 import { cn } from "@/lib/utils"
 
 const tabs = ["Preview", "Code"] as const
@@ -42,7 +41,7 @@ export function ComponentPreview({ demo, code }: { demo: React.ReactNode; code: 
         ))}
       </div>
       <div className="mt-3 h-[420px]">
-        <BackdropWindow
+        <div
           hidden={tab !== "Preview"}
           className={cn(
             "h-full items-center justify-center rounded-[4px] p-6 shadow-[inset_0_0_0_1px_rgb(255_255_255/0.07)]",
@@ -50,7 +49,7 @@ export function ComponentPreview({ demo, code }: { demo: React.ReactNode; code: 
           )}
         >
           {demo}
-        </BackdropWindow>
+        </div>
         <div hidden={tab !== "Code"} className="h-full">
           {code}
         </div>
