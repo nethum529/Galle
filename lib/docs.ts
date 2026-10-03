@@ -1,7 +1,7 @@
 import NavBarDemo from "@/registry/glass/demos/nav-bar-demo"
 import SurfaceDemo from "@/registry/glass/demos/surface-demo"
 
-const registryUrl = "https://raw.githubusercontent.com/nethum529/glass-ui/main/public/r"
+const registryUrl = "https://raw.githubusercontent.com/nethum529/Galle/main/public/r"
 
 export const docs = [
   {
@@ -27,7 +27,7 @@ const items = [
   { label: "Studio", href: "/studio" },
 ]
 
-<NavBar brand="glass" items={items} current={pathname} />`,
+<NavBar brand="Galle" items={items} current={pathname} />`,
   },
 ]
 

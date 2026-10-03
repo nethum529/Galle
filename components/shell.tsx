@@ -30,12 +30,12 @@ export function Shell({ components, children }: { components: Page[]; children: 
     <Surface className="flex h-full flex-col overflow-hidden rounded-none shadow-none md:flex-row">
       <aside className="hidden w-56 shrink-0 flex-col overflow-y-auto border-r border-white/[.07] pb-5 md:flex">
         <Link href="/" className="px-5 py-5 text-sm">
-          glass
+          Galle
         </Link>
         <Link href="/" className={linkClass("/")}>
           Introduction
         </Link>
-        <p className="mt-6 mb-1.5 px-5 text-xs text-white/40">Components</p>
+        <div className="h-5" />
         {components.map((page) => (
           <Link key={page.href} href={page.href} className={linkClass(page.href)}>
             {page.label}
@@ -45,7 +45,7 @@ export function Shell({ components, children }: { components: Page[]; children: 
 
       <div className="z-10 shrink-0 p-2 md:hidden">
         <NavBar
-          brand={<Link href="/">glass</Link>}
+          brand={<Link href="/">Galle</Link>}
           items={[{ label: "Introduction", href: "/" }, ...components]}
           current={pathname}
           onSelect={(href, e) => {

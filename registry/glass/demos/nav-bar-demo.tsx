@@ -16,7 +16,7 @@ export default function NavBarDemo() {
 
   return (
     <NavBar
-      brand="glass"
+      brand="Galle"
       items={items}
       current={current}
       onSelect={(href, e) => {

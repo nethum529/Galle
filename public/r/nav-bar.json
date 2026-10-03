@@ -5,7 +5,7 @@
   "description": "A glass top bar. The current link is marked by a pill that slides between links.",
   "registryDependencies": [
     "utils",
-    "https://raw.githubusercontent.com/nethum529/glass-ui/main/public/r/surface.json"
+    "https://raw.githubusercontent.com/nethum529/Galle/main/public/r/surface.json"
   ],
   "files": [
     {

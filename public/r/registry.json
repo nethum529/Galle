@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "glass",
-  "homepage": "https://github.com/nethum529/glass-ui",
+  "name": "galle",
+  "homepage": "https://github.com/nethum529/Galle",
   "items": [
     {
       "name": "surface",
@@ -16,7 +16,7 @@
       "type": "registry:ui",
       "title": "Nav bar",
       "description": "A glass top bar. The current link is marked by a pill that slides between links.",
-      "registryDependencies": ["utils", "https://raw.githubusercontent.com/nethum529/glass-ui/main/public/r/surface.json"],
+      "registryDependencies": ["utils", "https://raw.githubusercontent.com/nethum529/Galle/main/public/r/surface.json"],
       "files": [{ "path": "registry/glass/ui/nav-bar.tsx", "type": "registry:ui" }]
     }
   ]
