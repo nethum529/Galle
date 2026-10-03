@@ -28,7 +28,7 @@ export function Shell({ components, children }: { components: Page[]; children: 
 
   return (
     <Surface className="flex h-full flex-col overflow-hidden rounded-none shadow-none md:flex-row">
-      <aside className="hidden w-64 shrink-0 flex-col overflow-y-auto border-r border-white/[.07] pb-5 md:flex">
+      <aside className="hidden w-64 shrink-0 flex-col overflow-y-auto pb-5 md:flex">
         <Link href="/" className="px-[30px] pt-6 pb-5 text-sm">
           Galle
         </Link>
