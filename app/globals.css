@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-serif: "Sentient", Georgia, serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+
+html {
+  color-scheme: dark;
+}
+
+/* In a layer, so utilities such as [scrollbar-width:none] can override it. */
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(255 255 255 / 0.15) transparent;
+  }
+}
+
+::selection {
+  background: rgb(255 255 255 / 0.2);
+}

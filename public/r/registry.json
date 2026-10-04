@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "galle",
+  "homepage": "https://github.com/nethum529/Galle",
+  "items": [
+    {
+      "name": "surface",
+      "type": "registry:ui",
+      "title": "Surface",
+      "description": "A flat glass panel. It takes all its color from the backdrop.",
+      "registryDependencies": ["utils"],
+      "files": [{ "path": "registry/glass/ui/surface.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "nav-bar",
+      "type": "registry:ui",
+      "title": "Nav bar",
+      "description": "A glass top bar. The current link is marked by a pill that slides between links.",
+      "registryDependencies": ["utils", "https://raw.githubusercontent.com/nethum529/Galle/main/public/r/surface.json"],
+      "files": [{ "path": "registry/glass/ui/nav-bar.tsx", "type": "registry:ui" }]
+    }
+  ]
+}
